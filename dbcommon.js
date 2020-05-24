@@ -1,7 +1,7 @@
 const mongodb = require('mongodb');
 
 module.exports = async function (context, connection_string, dbname) {
-	let dbclient = null;
+    let dbclient = null;
     try {
         context.log('Connecting to DB.');
         dbclient = await new Promise((resolve, reject) => {
@@ -16,7 +16,7 @@ module.exports = async function (context, connection_string, dbname) {
                 }
             );
         });
-		return dbclient;
+        return dbclient;
     } catch (e) {
         context.log('Failed to connect.');
         context.res = {status: 500, body: e};
